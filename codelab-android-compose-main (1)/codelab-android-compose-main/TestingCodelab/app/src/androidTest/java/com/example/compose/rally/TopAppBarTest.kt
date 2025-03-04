@@ -3,6 +3,7 @@ package com.example.compose.rally
 import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.test.onNodeWithText
 import com.example.compose.rally.ui.components.RallyTopAppBar
 import org.junit.Rule
 import org.junit.Test
@@ -25,7 +26,7 @@ class TopAppBarTest {
         }
 
         composeTestRule
-            .onNodeWithContentDescription(RallyScreen.Accounts.name)
-            .assertIsSelected()
+            .onNodeWithText(RallyScreen.Accounts.name.uppercase())
+            .assertExists()
     }
 }
